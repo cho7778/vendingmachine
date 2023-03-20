@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+/* reset */
+body {
+    margin: 0;
+}
+
+h1, h2 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+p {
+    margin: 0;
+    font-size: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+input {
+    border : none;
+    padding: 0;
+    margin: 0;
+}
+
+/* common */
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+div {
+    border-radius: 5px;
+}
+
+li {
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 5px;    
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.selected-list {
+    overflow-y: scroll;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+}
+
+.selected-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+.selected-list::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+    background-clip:  padding-box;
+    border: 4px solid transparent;
+    height: 79px;
+    width: 10px;
+}
+
+.selected-list::-webkit-scrollbar-track {
+    background-color: transparent;
+    width: 10px;
+}
+
+.selected-list .item {
+    background-color: #fff;
+    display: flex;
+    margin: 6px 6px 6px 12px;
+    padding: 8px 10px;
+}
+
+.selected-list .item:first-child {
+    margin-top: 12px;
+}
+
+.selected-list .item:last-child {
+    margin-bottom: 12px;
+}
+
+.selected-list .img {
+    width: 1rem;
+    margin-right: 10px;
+}
+
+.selected-list .name {
+    font-size: 9px;
+    font-weight: 500;
+    flex-grow: 1;
+    line-height: 3;
+}
+
+.selected-list .number {
+    font-size: 14px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 4px 0 6px 0;
+    border: 1px solid #BDBDBD;
+}
+
+.money-display {
+    background-color: #EAE8FE;
+    padding: 6px 10px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.money-display p {
+    display: inline-block;
+    flex-shrink: 0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.money-display .title {
+    margin-right: auto;
+}
+
+/* layout */
+.main {
+    display: grid;
+    grid-template: 50px 474px / repeat(2, 1fr);
+    grid-template-areas: 
+    "a b"
+    "a c";
+    gap: 20px 28px;
+    width: 738px;
+    margin: 68px auto 0;
+}
+
+.vm-contents_wrapper {
+    padding: 31px 27px 28px;
+    background-color: #fff;
+    border-radius: 0;
+    grid-area: a;
+}
+
+.vm-selected .selected-list_wrapper {
+    margin: 12px 27px;
+}
+
+.vm-contents .money-display .wrapper {
+    padding: 7px 11px 5px 11px;
+}
+
+/* style */
+body {
+    background-color: #EAE8FE;
+}
+
+/* header*/
+.header {
+    text-align: center;
+}
+
+.logo img {
+    width: 386px;
+    margin: 0 auto;
+}
+
+/* main */
+.vm-contents {
+    background-color: #fff;
+}
+
+.vm-contents .list {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.vm-contents .list .item {
+    position: relative;
+}
+
+.vm-contents .list .item:nth-child(2)::before{
+    content:"";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-image: url(img/soldout.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.vm-contents .list .item-btn {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    padding: 9px 0;
+    width: 100%;
+}
+
+.vm-contents .list .item-btn:focus {
+    box-shadow: 0 0 0 3px inset  #6327FE;
+}
+
+.vm-contents .list img {
+    display: block;
+    margin: auto;
+}
+
+.vm-contents .list .name {
+    font-size: 9px;
+    padding: 5px 0 7px;
+    display: block;
+}
+
+.vm-contents .list .price {
+    font-size: 12px;
+    padding: 2px 0;
+    border-radius: 50px;
+    background-color: #6327FE;
+    color: white;
+    display: block;
+    width: 70px;
+    margin: auto;
+}
+
+.vm-contents .info {
+    display: grid;
+    grid-template: 1fr 1fr 106px / 200px 1fr;
+    grid-template-areas: 
+    "u v"
+    "w x"
+    "y z";
+    gap: 11px 12px;
+}
+
+.vm-contents .info .change-btn, .vm-contents .info .input-btn {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    height: 33px;
+}
+
+.vm-contents .info .input-display {
+    border: 1px solid #BDBDBD;
+    padding: 3px 6px 6px; 
+    box-sizing: border-box;
+}
+
+.vm-contents .info input::placeholder {
+    color: #BDBDBD;
+}
+
+.vm-contents .info .selected-btn {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    background-color: #6327FE;
+    color: #fff;
+}
+
+.vm-allowance {
+    background-color: #fff;
+    grid-area: b;
+}
+
+.vm-allowance .money-display {
+    margin: 9px 27px;
+}
+
+.vm-allowance h2 {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.vm-allowance .amount,.vm-allowance .currency {
+    font-weight: 700;
+}
+
+.vm-selected {
+    background-color: #fff;
+    grid-area: c;
+}
+
+.vm-selected h2{
+    font-size: 14px;
+    font-weight: 700;
+    margin: 25px 0 10px;
+    text-align: center;
+}
+
+.vm-selected .selected-list {
+    height: 364px;
+}
+
+.vm-selected .money-display {
+    background-color: transparent;
+    padding: 0;
+    margin-top: 6px;
+}
+
+.vm-selected .title {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 360px) {
+
+    .main {
+        margin: 31px 27px 20px;
+        width: calc(100% - 51px);
+    }
+
+    .vm-contents_wrapper {
+        padding: 0;
+    }
+
+    body {
+        background-color: #fff;
+    }
+
+    .logo img{
+        width: 166px;
+        margin: 0 auto;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        max-width: 360px;
+        margin: 0 auto;
+        gap: 0;
+    }
+
+    .vm-allowance .money-display {
+        margin-top: 27px;
+        margin: 27px 0 0 0;
+    }
+
+    .vm-selected .selected-list_wrapper {
+        margin: 0;
+    }
+
+    .vm-contents .info {
+        display: grid;
+        grid-template: 1fr 1fr 106px / 2fr 1fr;
+    }
+}
